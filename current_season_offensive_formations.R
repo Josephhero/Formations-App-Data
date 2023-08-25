@@ -48,4 +48,4 @@ off_formation3 <-
   mutate(position_group = factor(position_group, c("RB", "TE", "WR"))) |> 
   mutate(formation = paste(rb, te, wr, sep = "-"))
 
-saveRDS(off_formation3, paste0("data/", current_year, "_offensive_formations.rds"))
+saveRDS(off_formation3, paste0(current_year, "_offensive_formations.rds"))
