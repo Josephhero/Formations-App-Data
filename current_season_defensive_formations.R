@@ -1,5 +1,8 @@
 library(nflreadr)
-library(tidyverse)
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(janitor)
 
 # Data-----
 
