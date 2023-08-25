@@ -24,19 +24,22 @@ jobs:
         uses: r-lib/actions/setup-r-dependencies@v2
         with:
           packages: |
-            any::tidyverse 
+            any::dplyr
+            any::tidyr
+            any::stringr
+            any::janitor
             any::nflreadr
 
       - name: Check out repository
         uses: actions/checkout@v3
 
       - name: Import data
-        run: Rscript -e 'source("current_season_offensive_formations.R")'
+        run: Rscript -e 'source("R/current_season_offensive_formations.R")'
 
       - name: Commit results
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git add 2022_offensive_formations.rds
+          git add Data/2022_offensive_formations.rds
           git commit -m 'Data updated' || echo "No changes to commit"
           git push origin || echo "No changes to commit"
