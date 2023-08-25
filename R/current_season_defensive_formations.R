@@ -47,4 +47,4 @@ def_formation3 <-
   mutate(position_group = factor(position_group, c("DL", "LB", "DB"))) |> 
   mutate(formation = paste(dl, lb, db, sep = "-"))
 
-saveRDS(def_formation3, paste0("current_year, "_defensive_formations.rds"))
+saveRDS(def_formation3, paste0("Data/", current_year, "_defensive_formations.rds"))
