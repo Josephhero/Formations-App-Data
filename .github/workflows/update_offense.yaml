@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
   
 jobs:
-  update-offense-data:
+  update-data:
     runs-on: ubuntu-latest
     steps:
       - name: Set up R
@@ -33,7 +33,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v3
 
-      - name: Import data
+      - name: Import offense data
         run: Rscript -e 'source("R/current_season_offensive_formations.R")'
 
       - name: Commit results
