@@ -36,6 +36,9 @@ jobs:
       - name: Import offense data
         run: Rscript -e 'source("R/current_season_offensive_formations.R")'
 
+      - name: Import defense data
+        run: Rscript -e 'source("R/current_season_defensive_formations.R")'
+
       - name: Commit results
         run: |
           git config --local user.email "actions@github.com"
